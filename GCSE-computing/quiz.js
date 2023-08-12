@@ -9,18 +9,6 @@ async function loadJSON() {
   try {
     const response = await fetch('quiz.json');
     const data = await response.json();
-    questions = data.questions;
-    renderQuestion();
-  } catch (error) {
-    console.error('Error fetching JSON:', error);
-  }
-}
-
-
-async function loadJSON() {
-  try {
-    const response = await fetch('GCSE-computing-quiz.json');
-    const data = await response.json();
     questions = data.questions; // Use data.questions to access the array of questions
     renderQuestion();
     startTime = new Date().getTime(); // Start the timer
@@ -32,20 +20,20 @@ async function loadJSON() {
 
 function updateTimer() {
   const currentTime = new Date().getTime();
-  const totalTime = (currentTime - startTime) / 1000;
+  accumulatedTime += (currentTime - startTime) / 1000; // Accumulate the time
+  startTime = currentTime; // Update the start time
   const timeElement = document.getElementById('time');
-  timeElement.textContent = `Time: ${totalTime.toFixed(1)}s`;
+  timeElement.textContent = `Time: ${accumulatedTime.toFixed(1)}s`;
 
   requestAnimationFrame(updateTimer); // Recursively call the function
 }
-
 
 function renderQuestion() {
   const questionContainer = document.getElementById('question-container');
   const questionElement = document.getElementById('question');
   const answerButtons = document.getElementById('answer-buttons');
   const scoreboard = document.getElementById('scoreboard');
-  
+
   if (currentQuestionIndex >= questions.length) {
     displayFinalScoreAndStats();
     return;
@@ -60,7 +48,7 @@ function renderQuestion() {
   }
 
   const mixedAnswers = mixAnswers(currentQuestion.keywords); // Mix correct and random answers
-  
+
   mixedAnswers.forEach(answer => {
     const button = document.createElement('button');
     button.innerText = answer;
@@ -70,7 +58,7 @@ function renderQuestion() {
   });
 
   scoreboard.innerHTML = `
-    <span id="time">Time: ${getTimeElapsed().toFixed(1)}s</span>
+    <span id="time">Time: ${accumulatedTime.toFixed(1)}s</span>
     <span id="question-name">Question: ${currentQuestion.number}</span>
     <span id="accuracy">Accuracy: ${(totalCorrectAnswers / totalAttempts * 100).toFixed(2)}%</span>
     <span id="score">Score: ${totalCorrectAnswers}/${questions.length}</span>
@@ -96,15 +84,10 @@ function selectAnswer(isCorrect) {
   if (isCorrect) {
     totalCorrectAnswers++;
   }
-  
+
   currentQuestionIndex++;
   startTime = new Date().getTime(); // Reset start time for the new question
   renderQuestion();
-}
-
-function getTimeElapsed() {
-  const currentTime = new Date().getTime();
-  return (currentTime - startTime) / 1000;
 }
 
 function displayFinalScoreAndStats() {
@@ -126,7 +109,6 @@ function displayFinalScoreAndStats() {
     <p>Score: ${totalCorrectAnswers}/${questions.length}</p>
   `;
 }
-
 
 window.addEventListener('DOMContentLoaded', () => {
   loadJSON();
