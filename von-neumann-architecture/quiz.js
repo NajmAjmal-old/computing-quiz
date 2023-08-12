@@ -7,7 +7,7 @@ let accumulatedTime = 0;
 
 async function loadJSON() {
   try {
-    const response = await fetch('GCSE-computing-quiz.json');
+    const response = await fetch('quiz.json');
     const data = await response.json();
     questions = data.questions;
     renderQuestion();
