@@ -1,0 +1,88 @@
+{
+  "questions": [
+    {
+      "number": "1 (a) i",
+      "question": "Control Unit",
+      "marks": 1,
+      "keywords": ["CPU component responsible for coordinating and managing the execution of instructions."],
+    },
+    {
+      "number": "1 (a) ii",
+      "question": "Arithmetic Logic Unit (ALU)",
+      "marks": 1,
+      "keywords": ["CPU component that performs arithmetic operations (addition, subtraction, etc.) and logical operations (AND, OR, NOT)."],
+    },
+    {
+      "number": "1 (b) i",
+      "question": "Registers",
+      "marks": 1,
+      "keywords": ["Small, high-speed storage locations within the CPU used for temporarily holding data and instructions during processing."],
+    },
+    {
+      "number": "1 (b) ii",
+      "question": "Memory Data Register (MDR)",
+      "marks": 1,
+      "keywords": ["Register that stores data fetched from or to be written to memory."],
+    },
+    {
+      "number": "1 (c) i",
+      "question": "Memory Address Register (MAR)",
+      "marks": 1,
+      "keywords": ["Register that holds the memory address of the data or instruction that needs to be accessed from or stored to memory."],
+    },
+    {
+      "number": "1 (c) ii",
+      "question": "Cache Memory",
+      "marks": 1,
+      "keywords": ["High-speed volatile memory located between the CPU and main memory, used to store frequently accessed data for faster processing."],
+    },
+    {
+      "number": "1 (d)",
+      "question": "Program Counter (PC)",
+      "marks": 1,
+      "keywords": ["Register that keeps track of the memory address of the next instruction to be fetched and executed."],
+    },
+    {
+      "number": "2 (a)",
+      "question": "Von Neumann architecture",
+      "marks": 1,
+      "keywords": ["A computer architecture where program instructions and data are stored in the same memory, and fetched and executed sequentially by a central processing unit."],
+    },
+    {
+      "number": "2 (b)",
+      "question": "Bus",
+      "marks": 1,
+      "keywords": ["A communication pathway that allows data and instructions to be transferred between different components of a computer, like the CPU, memory, and peripherals."],
+    },
+    {
+      "number": "2 (c) i",
+      "question": "Input/Output (I/O) Unit",
+      "marks": 1,
+      "keywords": ["Component responsible for managing the communication between the CPU and external devices, facilitating data input and output."],
+    },
+    {
+      "number": "2 (c) ii",
+      "question": "Clock Speed",
+      "marks": 1,
+      "keywords": ["The rate at which the CPU's clock generates pulses, determining the number of instructions it can execute per second."],
+    },
+    {
+      "number": "2 (d) i",
+      "question": "Registers",
+      "marks": 1,
+      "keywords": ["Small, high-speed storage locations within the CPU used for temporarily holding data and instructions during processing."],
+    },
+    {
+      "number": "2 (d) ii",
+      "question": "Control Bus",
+      "marks": 1,
+      "keywords": ["A type of bus responsible for transmitting control signals between the CPU and other parts of the computer."],
+    },
+    {
+      "number": "2 (e)",
+      "question": "Instruction Set",
+      "marks": 1,
+      "keywords": ["A collection of all the instructions that a CPU can execute, including their binary representations and corresponding operations."],
+    }
+  ]
+}
