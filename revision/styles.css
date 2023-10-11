@@ -1,0 +1,52 @@
+/* Add your CSS styles here */
+body {
+    background-color: #f0f0f0; /* Light gray background */
+    font-family: Arial, sans-serif;
+    color: #000; /* Set text color to black */
+    display: flex;
+    flex-direction: row; /* Display content in a single row */
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 10px); /* Fit screen height with margin and padding */
+    margin: 5px; /* Add margin to ensure content doesn't touch the edges */
+    padding: 5px; /* Add padding to ensure content doesn't touch the edges */
+    overflow-x: auto; /* Add horizontal scrollbar when content overflows horizontally */
+    overflow-y: hidden; /* Hide vertical scrollbar */
+}
+
+.main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    gap: 20px; /* Increase the gap to prevent content from being cut off */
+    padding: 20px; /* Add padding to the container */
+}
+
+.topic {
+    border: 2px solid #007BFF; /* Bold blue border */
+    background-color: #EAEAEA; /* Light gray background */
+    padding: 20px;
+    border-radius: 15px;
+    width: 300px;
+    transition: transform 0.3s, background-color 0.3s, color 0.3s; /* Add color transition */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    font-family: Arial, sans-serif; /* Use Arial font */
+    font-size: 18px; /* Increase font size */
+}
+
+/* Improve readability by changing text color to black */
+.topic {
+    color: #000;
+}
+
+/* Apply hover effect */
+.topic:hover {
+    transform: scale(1.05); /* Enlarge the container by 5% on hover */
+    background-color: #007BFF; /* Bold blue background on hover */
+    color: #fff; /* White text on hover */
+}
